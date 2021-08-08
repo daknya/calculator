@@ -1,3 +1,4 @@
+let inp_exp = '';
 let nums = [];
 let opr = [];
 let num = '';
@@ -19,6 +20,8 @@ function exp_input(event) {
     flash(button_cl);
 
     let inp = button_cl.innerHTML;
+    inp_exp = (inp_type != 'clear' && inp_type != 'delete') ? inp_exp.concat(inp) : '';
+    document.getElementById('inp_exp').innerHTML = inp_exp;
 
     if (inp_type == 'number')
     {
@@ -48,6 +51,15 @@ function exp_input(event) {
 }
 
 function clear_dis() {
+    num = '';
+    while (nums.length > 0)
+    {
+        nums.pop();
+    }
+    while (opr.length > 0)
+    {
+        opr.pop();
+    }
     document.getElementById('result').innerHTML = '';
     document.getElementById('expression').innerHTML = '';
     
@@ -55,6 +67,18 @@ function clear_dis() {
 
 function eval() {
     let result = nums[0];
+    
+    for (let index = 0; index < opr.length ; index++)
+    {
+        if (opr[index] == '+')
+        {
+            result += nums[index + 1];
+        }
+        else if (opr[index] == '-')
+        {
+            result -= nums[index + 1];
+        }
+    }
 
     document.getElementById('result').innerHTML = result;
 }
