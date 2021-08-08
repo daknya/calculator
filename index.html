@@ -15,43 +15,59 @@
 			<div data-current class="current"></div>
 		</div>
 		
-			<button onclick="exp_input(event)" class="data-clear span-two">clear</button>
-			<button onclick="exp_input(event)" class="data-delete">del</button>
-			<button onclick="exp_input(event)" class="data-operation">/</button>
+			<button onclick="exp_input(event)" class="clear span-two">clear</button>
+			<button onclick="exp_input(event)" class="delete">del</button>
+			<button onclick="exp_input(event)" class="operator">/</button>
 
-			<button onclick="exp_input(event)" class="data-number">1</button>
-			<button onclick="exp_input(event)" class="data-number">2</button>
-			<button onclick="exp_input(event)" class="data-number">3</button>
-			<button onclick="exp_input(event)" class="data-number">*</button>
+			<button onclick="exp_input(event)" class="number">1</button>
+			<button onclick="exp_input(event)" class="number">2</button>
+			<button onclick="exp_input(event)" class="number">3</button>
+			<button onclick="exp_input(event)" class="number">*</button>
 
-			<button onclick="exp_input(event)" class="data-number">4</button>
-			<button onclick="exp_input(event)" class="data-number">5</button>
-			<button onclick="exp_input(event)" class="data-number">6</button>
-			<button onclick="exp_input(event)" class="data-operation">+</button>
+			<button onclick="exp_input(event)" class="number">4</button>
+			<button onclick="exp_input(event)" class="number">5</button>
+			<button onclick="exp_input(event)" class="number">6</button>
+			<button onclick="exp_input(event)" class="operator">+</button>
 
-			<button onclick="exp_input(event)" class="data-number">7</button>
-			<button onclick="exp_input(event)" class="data-number">8</button>
-			<button onclick="exp_input(event)" class="data-number">9</button>
-			<button onclick="exp_input(event)" class="data-operation">-</button>
+			<button onclick="exp_input(event)" class="number">7</button>
+			<button onclick="exp_input(event)" class="number">8</button>
+			<button onclick="exp_input(event)" class="number">9</button>
+			<button onclick="exp_input(event)" class="operator">-</button>
 			
-			<button onclick="exp_input(event)" class="data-number">.</button>
-			<button onclick="exp_input(event)" class="data-number">0</button>
-			<button class="span-two data-equals">=<button>
+			<button onclick="exp_input(event)" class="number">.</button>
+			<button onclick="exp_input(event)" class="number">0</button>
+			<button onclick="exp_input(event)" class="equals span-two">=<button>
 
     </div>
 	<script>
 		let nums = [];
-
+		let opr = [];
+		let num = '';
 		function exp_input(event) {
 			let button_cl = event.srcElement;
 			let inp_type = button_cl.classList[0];
 			let inp = button_cl.innerHTML;
 
-			alert(inp);
-			// if (inp_type == 'data-number')
-			// {
-			// 	nums.push(String())
-			// }
+			if (inp_type == 'number')
+			{
+				num = num.concat(inp);
+			}
+			else if (inp_type == 'operator')
+			{
+				nums.push(parseInt(num));
+				num = '';
+				opr.push(inp);
+			}
+			else if (inp_type == 'equals')
+			{
+				nums.push(parseInt(num));
+				num = '';
+				eval();
+				while (nums.length > 0)
+				{
+					nums.pop();
+				}
+			}
 		}
 	</script>
 </body>
