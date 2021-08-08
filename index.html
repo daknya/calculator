@@ -11,8 +11,8 @@
 <body>
 	<div class="calculator">
 		<div class="output">
-			<div data-previous class="previous"></div>
-			<div data-current class="current"></div>
+			<div id="expression" data-previous class="previous"></div>
+			<div id="result"></div>
 		</div>
 		
 			<button onclick="exp_input(event)" class="clear span-two">clear</button>
@@ -34,44 +34,9 @@
 			<button onclick="exp_input(event)" class="number">9</button>
 			<button onclick="exp_input(event)" class="operator">-</button>
 			
-			<button onclick="exp_input(event)" class="data-number span-two">0</button>
-			<button class="data-equals span-two">=<button>
-
+			<button onclick="exp_input(event)" class="number span-two">0</button>
+			<button onclick="exp_input(event)" class="equals span-two">=<button>
     </div>
-	<script>
-		let nums = [];
-		let opr = [];
-		let num = '';
-
-		function exp_input(event) {
-			let button_cl = event.srcElement;
-			let inp_type = button_cl.classList[0];
-			
-			let inp = button_cl.innerHTML;
-
-			if (inp_type == 'number')
-			{
-				num = num.concat(inp);
-			}
-			else if (inp_type == 'operator')
-			{
-				nums.push(parseInt(num));
-				num = '';
-				opr.push(inp);
-			}
-			else if (inp_type == 'equals')
-			{
-				nums.push(parseInt(num));
-				num = '';
-				eval();
-				while (nums.length > 0)
-				{
-					nums.pop();
-				}
-			}
-		}
-
-	</script>
 </body>
 
 </html>

@@ -9,6 +9,7 @@ body{
     background: grey;
 }
 .calculator{
+     margin-top: 30px;
      display: grid;
      justify-content:center;
      align-content: center;
@@ -23,7 +24,7 @@ body{
      border: 1px solid rgb(36, 33, 33);
      outline: none;
      border-radius: 10px;
-     background-color: rgba(255, 255, 255, .75);
+     background-color: rgba(255, 255, 255, 0.749);
 }
 .calculator > button:hover{
     background-color: rgba(255, 255, 255, .95);
