@@ -1,7 +1,91 @@
-let inp_exp = '';
+let inp = '';
+
+var ans = '';
+var clear = false;
+
+
+
+function input(a){
+var data = String(a);
+ 
+
+switch(data){
+
+    case 'ac':
+        inp = '';
+        break;
+
+     case '=':
+         clear = true;
+       solve();
+       break;
+    default:
+        if(clear == true){
+            inp = '';
+            clear=false;
+        }
+
+        if(data == '+'  || data == '-' || data == '/' || data == '*'){
+            clear = false
+         solve();
+        }
+       
+       inp = inp + data;
+       
+}
+
+
+ screen = document.getElementById('inp').innerHTML = inp;
+ 
+}
+
+function solve(){
+
+    if(inp.split("+").length == 2){
+        let number = inp.split('+');
+        var sum = parseFloat(number[0])+parseFloat(number[1]);
+        ans = ''+sum;
+
+
+    }
+    if(inp.split("*").length == 2){
+        let number = inp.split('*');
+        var sum = parseFloat(number[0])*parseFloat(number[1]);
+        ans = ''+sum;
+
+
+    }
+    if(inp.split("/").length == 2){
+        let number = inp.split('/');
+        var sum = parseFloat(number[0])/parseFloat(number[1]);
+        ans = ''+sum;
+
+
+    } 
+       if(inp.split("-").length > 1){
+        let number = inp.split('-');
+        if(number.length == 2){
+        var sum = parseFloat(number[0])-parseFloat(number[1]);
+        ans = ''+sum;
+
+        }
+        else if(number.length == 3){
+            var sum = -parseFloat(number[1])-parseFloat(number[2]);
+            ans = ''+sum;
+        }
+
+    }
+    
+ res = document.getElementById('result').innerHTML = ans;
+
+
+}
+
+/*let inp_exp = '';
 let nums = [];
 let opr = [];
 let num = '';
+
 
 function flash(element) {
     element.style.backgroundColor = '#000';
@@ -81,4 +165,4 @@ function eval() {
     }
 
     document.getElementById('result').innerHTML = result;
-}
+}*/

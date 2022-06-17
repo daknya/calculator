@@ -11,31 +11,31 @@
 <body>
 	<div class="calculator">
 		<div style="padding: 20px" class="output">
-			<div id="inp_exp"></div>
+			<div id="inp"></div>
 			<div id="result"></div>
 		</div>
 		
-			<button onclick="exp_input(event)" class="clear span-two">clear</button>
-			<button onclick="exp_input(event)" class="delete">del</button>
-			<button onclick="exp_input(event)" class="operator">/</button>
+			<button onclick="input('ac')" class="clear span-three">clear</button>
+	
+			<button onclick="input('/')" class="operator">/</button>
 
-			<button onclick="exp_input(event)" class="number">1</button>
-			<button onclick="exp_input(event)" class="number">2</button>
-			<button onclick="exp_input(event)" class="number">3</button>
-			<button onclick="exp_input(event)" class="number">*</button>
+			<button onclick="input(1)" class="number">1</button>
+			<button onclick="input(2)" class="number">2</button>
+			<button onclick="input(3)" class="number">3</button>
+			<button onclick="input('*')" class="number">*</button>
 
-			<button onclick="exp_input(event)" class="number">4</button>
-			<button onclick="exp_input(event)" class="number">5</button>
-			<button onclick="exp_input(event)" class="number">6</button>
-			<button onclick="exp_input(event)" class="operator">+</button>
+			<button onclick="input(4)" class="number">4</button>
+			<button onclick="input(5)" class="number">5</button>
+			<button onclick="input(6)" class="number">6</button>
+			<button onclick="input('+')" class="operator">+</button>
 
-			<button onclick="exp_input(event)" class="number">7</button>
-			<button onclick="exp_input(event)" class="number">8</button>
-			<button onclick="exp_input(event)" class="number">9</button>
-			<button onclick="exp_input(event)" class="operator">-</button>
+			<button onclick="input(7)" class="number">7</button>
+			<button onclick="input(8)" class="number">8</button>
+			<button onclick="input(9)" class="number">9</button>
+			<button onclick="input('-')" class="operator">-</button>
 			
-			<button onclick="exp_input(event)" class="number span-two">0</button>
-			<button onclick="exp_input(event)" class="equals span-two">=<button>
+			<button onclick="input(0)" class="number span-two">0</button>
+			<button onclick="input('=')" class="equals span-two">=<button>
     </div>
 </body>
 
